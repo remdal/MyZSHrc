@@ -1,0 +1,55 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                        +       +          */
+/*      File: shellVie            +++     +++				**/
+/*                                        +       +          */
+/*      By: Laboitederemdal      **        +       +        **/
+/*                                       +           +       */
+/*      Created: 09/09/2025 05:16:08      + + + + + +   * ****/
+/*                                                           */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+alias ftclang='clang -Wall -Wextra -Werror'
+alias ftdsa='find . -name ".DS_Store" -print && find . -name "a.out" -print' #-delete
+
+alias nyan='curl ascii.live/nyan'
+alias earth='curl ascii.live/earth'
+
+PROMPT='%F{blue}%n%f %F{cyan}%~%f %# '
+ZSH_THEME="agnoster"
+
+# Active la coloration des commandes
+export CLICOLOR=1
+# Définit les couleurs pour 'ls' (optionnel mais utile)
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+E_C()
+{
+	local filename=$1
+	local current_date=$(date +"%d/%m/%Y %H:%M:%S")
+	local basefilename=$(basename "$filename")
+	local len=${#basefilename}
+	local tabs="	"
+	if [ $len -lt 6 ]; then tabs="					"
+	elif [ $len -lt 10 ]; then tabs="				"
+	elif [ $len -lt 14 ]; then tabs="			"
+	elif [ $len -lt 18 ]; then tabs="		"
+	else tabs="	"
+	fi
+	cat > "$filename" << EOF
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                        +       +          */
+/*      File: $basefilename            +++     +++$tabs**/
+/*                                        +       +          */
+/*      By: Laboitederemdal      **        +       +        **/
+/*                                       +           +       */
+/*      Created: $current_date      + + + + + +   * ****/
+/*                                                           */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+EOF
+	echo "✅ Fichier $filename créé avec entête !"
+	printf "\e[0;92mAdmirez comment il vous regarde \e[1;33m*_*\e[0m\n"
+	ls -la
+	vim "$filename"
+}
+alias E_C='E_C'

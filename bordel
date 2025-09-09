@@ -1,0 +1,28 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                        +       +          */
+/*      File: bordel            +++     +++				**/
+/*                                        +       +          */
+/*      By: Laboitederemdal      **        +       +        **/
+/*                                       +           +       */
+/*      Created: 09/09/2025 05:14:31      + + + + + +   * ****/
+/*                                                           */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+set number
+set relativenumber
+syntax on
+set smartindent
+set ruler
+set guifont=Fira\ Code\ Retina\ 12
+set showmatch
+set wildmenu
+if has("gui_running")
+	set guifont=Menlo\ Regular:h14
+endif
+set nocompatible
+set laststatus=2
+set mouse=a
+set statusline=%F%m%r%h%w\ [Pos=%l,%v][%p%%]\ [Buffer=%n]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+hi StatusLine ctermfg=White ctermbg=DarkGray cterm=NONE
+set backspace=indent,eol,start
+set clipboard^=unnamed,unnamedplus
