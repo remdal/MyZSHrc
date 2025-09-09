@@ -1,0 +1,2 @@
+# MyZSHrc
+.zshrc &amp; .vimrc
