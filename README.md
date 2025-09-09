@@ -2,6 +2,8 @@
 .zshrc file
 Usage "E_C name_of_a_file"
 
+<img width="1800" height="1169" alt="Image" src="https://github.com/user-attachments/assets/5f7d1c98-4243-40f1-adbe-1dadff5c85fd" />
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                        +       +          */
 /*      File: README.md            +++     +++              **/
